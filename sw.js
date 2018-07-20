@@ -35,6 +35,10 @@ self.addEventListener("activate", (event) => {
 // if not, make a request to the resource, add it to the cache and return it
 self.addEventListener("fetch", (event) => {
 
+// part of code obtained from:
+// https://stackoverflow.com/questions/33045517/use-serviceworker-cache-only-when-offline
+// by Marina ES
+
     event.respondWith(
         caches.open(cacheName)
             .then(cache => {
